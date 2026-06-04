@@ -459,14 +459,13 @@
     const regBtn = document.getElementById('regBtn');
     const payGuide = document.getElementById('payGuide');
     const payClose = document.getElementById('payGuideClose');
-    const payBtn = document.getElementById('payGuideBtn');
-    const wpsLink = document.getElementById('wpsLink');
+    const payGuideBtn = document.getElementById('payGuideBtn');
+    const paySection = document.getElementById('paySection');
+    const formSection = document.getElementById('formSection');
     if (!regBtn || !payGuide) return;
 
-    // 点击"立即报名" → 弹出支付弹窗
     regBtn.addEventListener('click', () => payGuide.classList.add('show'));
 
-    // 关闭支付弹窗
     if (payClose) {
       payClose.addEventListener('click', () => payGuide.classList.remove('show'));
     }
@@ -474,21 +473,31 @@
       if (e.target === payGuide) payGuide.classList.remove('show');
     });
 
-    // 点击"已支付" → 打开 WPS 表单
-    if (payBtn && wpsLink) {
-      payBtn.addEventListener('click', () => {
+    // 点击"已支付" → 展示确认页
+    if (payGuideBtn && paySection && formSection) {
+      payGuideBtn.addEventListener('click', () => {
         payGuide.classList.remove('show');
-        wpsLink.click();
+        paySection.style.display = 'none';
+        formSection.style.display = 'flex';
+        formSection.querySelectorAll('.anim-on-enter').forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, i * 100);
+        });
       });
     }
   }
 
-  // ========== 10. 地图导航 ==========
+  // ========== 11. 地图导航 ==========
   function initMap() {
-    const mapBtn = document.getElementById('mapBtn');
-    if (!mapBtn) return;
-    mapBtn.addEventListener('click', function () {
-      window.open(CONFIG.mapUrl, '_blank');
+    $$('.map-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        window.open(CONFIG.mapUrl, '_blank');
+      });
     });
   }
 

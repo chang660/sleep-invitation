@@ -378,6 +378,24 @@ html, body {
 .pay-guide-btn { width:100%; background:linear-gradient(135deg,#ffd54f,#ff8f00); border:none; border-radius:12px; padding:13px; font-size:15px; font-weight:700; color:#1a1a2e; cursor:pointer; }
 .pay-guide-btn:active { transform:scale(0.96); }
 
+/* === 支付后确认页 === */
+.paid-icon { font-size:56px; margin-bottom:14px; animation:scaleIn 0.5s ease; }
+@keyframes scaleIn { 0%{transform:scale(0)} 60%{transform:scale(1.15)} 100%{transform:scale(1)} }
+.paid-title { font-size:20px; font-weight:700; color:#ffd54f; letter-spacing:4px; margin-bottom:10px; }
+.paid-desc { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.7; text-align:center; margin-bottom:20px; }
+.signup-btn-link {
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  width:100%;
+  background:linear-gradient(135deg,#ffd54f,#ff8f00);
+  border:none; border-radius:14px;
+  padding:16px 24px;
+  font-size:17px; font-weight:700;
+  color:#1a1a2e; text-decoration:none;
+  cursor:pointer; transition:all 0.3s ease;
+}
+.signup-btn-link:active { transform:scale(0.96); }
+.form-tip { font-size:12px; color:rgba(255,255,255,0.35); text-align:center; }
+
 /* === Toast === */
 .toast {
   position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);

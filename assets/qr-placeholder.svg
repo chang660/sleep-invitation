@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#fff" opacity="0.08"/>
+  <rect x="10" y="10" width="100" height="100" rx="4" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4"/>
+  <!-- 三个定位块 -->
+  <rect x="18" y="18" width="24" height="24" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <rect x="78" y="18" width="24" height="24" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <rect x="18" y="78" width="24" height="24" rx="3" fill="rgba(255,255,255,0.06)"/>
+  <!-- 二维码点阵 -->
+  <circle cx="48" cy="44" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="44" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="64" cy="44" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="52" cy="52" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="60" cy="52" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="48" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="64" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="72" cy="52" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="72" cy="60" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="48" cy="68" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="68" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="68" cy="68" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="76" cy="68" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="76" cy="76" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="48" cy="76" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="76" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="64" cy="76" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="84" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="64" cy="84" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="72" cy="84" r="1.5" fill="rgba(255,255,255,0.08)"/>
+  <text x="60" y="104" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.12)" font-family="sans-serif">放客服二维码</text>
+</svg>

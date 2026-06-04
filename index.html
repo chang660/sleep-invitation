@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="山东睡眠疗愈交流会邀请函 · 共建中国健康舒适高效的睡眠疗愈平台">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>山东睡眠疗愈交流会 · 邀请函</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="山东睡眠疗愈交流会">
+  <meta property="og:description" content="共建中国健康舒适高效的睡眠疗愈平台">
+  <meta property="og:image" content="assets/share-poster.png">
+  <meta property="og:type" content="website">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#192823">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+
+  <!-- ========== Loading 遮罩 ========== -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-content">
+      <div class="loading-logo">🌙</div>
+      <div class="loading-title">山东睡眠疗愈交流会</div>
+      <div class="loading-subtitle">邀请函</div>
+      <div class="loading-bar">
+        <div class="loading-bar-inner" id="loadingBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="starCanvas"></canvas>
+  <div class="music-btn" id="musicBtn" role="button" aria-label="背景音乐开关" tabindex="0">🎵</div>
+
+  <!-- 页码指示器 -->
+  <div class="page-indicator">
+    <div class="page-dot active"></div>
+    <div class="page-dot"></div>
+    <div class="page-dot"></div>
+    <div class="page-dot"></div>
+    <div class="page-dot"></div>
+    <div class="page-dot"></div>
+  </div>
+
+  <!-- 报名由 WPS 表单处理 -->
+
+  <!-- ========== Swiper ========== -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <!-- ======== P1 · 封面 ======== -->
+      <div class="swiper-slide">
+        <div class="slide-bg slide-bg--cover"></div>
+        <div class="slide-top-bar">
+          <span></span>
+          <span class="slide-counter">1 / 6</span>
+        </div>
+
+        <div class="cover-title anim-on-enter">山东睡眠疗愈<br>交流会</div>
+
+        <div class="cover-img-wrap anim-on-enter">
+          <img class="cover-img" src="assets/cover.png" alt="主办方代表">
+        </div>
+
+        <div class="cover-meta anim-on-enter">
+          <div class="cover-divider"></div>
+          <div class="cover-slogan">共建中国健康舒适高效<br><span class="slogan-em">睡眠疗愈平台</span></div>
+          <div class="cover-vision">“让每一个家庭都有一位<br><span class="vision-em">幸福催眠师</span>”</div>
+          <div class="cover-org">
+            主办：悦心愈商<br>
+            协办：慈航大健康<br>
+            承办：齐河阿尔卡迪亚温泉高尔夫国际酒店
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true" data-swiper-parallax="-200">
+          <span class="arrow">⌄</span>
+          <span>滑动探索</span>
+        </div>
+      </div>
+
+      <!-- ======== P2 · 市场机遇 ======== -->
+      <div class="swiper-slide">
+        <div class="slide-bg slide-bg--pain"></div>
+        <div class="slide-top-bar">
+          <span></span>
+          <span class="slide-counter">2 / 6</span>
+        </div>
+
+        <div style="text-align:center; margin-bottom:6px;" class="anim-on-enter" data-swiper-parallax="-100">
+          <div class="pain-number">3亿</div>
+          <div class="pain-number-label">中国人正饱受睡眠困扰</div>
+          <div class="pain-tag">平均每4人就有1人睡不好</div>
+        </div>
+
+        <div class="pain-card anim-on-enter" data-swiper-parallax="-50">
+          <div class="pain-card-icon">🌙</div>
+          <div>
+            <div class="pain-card-title">入睡辗转难眠</div>
+            <div class="pain-card-desc">躺下就是漫长的煎熬</div>
+          </div>
+        </div>
+        <div class="pain-card anim-on-enter" data-swiper-parallax="-50">
+          <div class="pain-card-icon">☀️</div>
+          <div>
+            <div class="pain-card-title">凌晨频繁惊醒</div>
+            <div class="pain-card-desc">醒来后再难入睡</div>
+          </div>
+        </div>
+        <div class="pain-card anim-on-enter" data-swiper-parallax="-50">
+          <div class="pain-card-icon">💊</div>
+          <div>
+            <div class="pain-card-title">试遍方法无效</div>
+            <div class="pain-card-desc">缺少科学对症的调理方式</div>
+          </div>
+        </div>
+
+        <div class="pain-cta anim-on-enter" data-swiper-parallax="-30">
+          <span>⟶ 睡眠疗愈 · 2026实体优质蓝海赛道</span>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="arrow">⌄</span>
+          <span>滑动继续</span>
+        </div>
+      </div>
+
+      <!-- ======== P3 · 六大落地亮点 ======== -->
+      <div class="swiper-slide">
+        <div class="slide-bg slide-bg--highlight"></div>
+        <div class="slide-top-bar">
+          <span></span>
+          <span class="slide-counter">3 / 6</span>
+        </div>
+
+        <div class="section-title anim-on-enter" data-swiper-parallax="-80">大会六大落地亮点</div>
+        <div class="section-divider anim-on-enter" data-swiper-parallax="-60"></div>
+        <div class="highlight-subtitle anim-on-enter">一站式赋能创业</div>
+
+        <div class="highlight-grid" data-swiper-parallax="-40">
+          <div class="highlight-item anim-on-enter">
+            <div class="highlight-icon">🌙</div>
+            <div class="highlight-name">沉浸式体验</div>
+            <div class="highlight-sub">全场景睡眠疗愈实景感受</div>
+          </div>
+          <div class="highlight-item anim-on-enter">
+            <div class="highlight-icon">🔧</div>
+            <div class="highlight-name">技术现场实操</div>
+            <div class="highlight-sub">面对面教学，当场学会落地</div>
+          </div>
+          <div class="highlight-item anim-on-enter">
+            <div class="highlight-icon">🏛️</div>
+            <div class="highlight-name">空间落地方案</div>
+            <div class="highlight-sub">酒店·门店·山庄定制方案</div>
+          </div>
+          <div class="highlight-item anim-on-enter">
+            <div class="highlight-icon">🤝</div>
+            <div class="highlight-name">资源对接共创</div>
+            <div class="highlight-sub">上下游精准面谈，现场敲定</div>
+          </div>
+          <div class="highlight-item anim-on-enter">
+            <div class="highlight-icon">📡</div>
+            <div class="highlight-name">天网来客·不缺客</div>
+            <div class="highlight-sub">全域引流获客体系</div>
+          </div>
+          <div class="highlight-item anim-on-enter">
+            <div class="highlight-icon">🤖</div>
+            <div class="highlight-name">智能体+一人一公司</div>
+            <div class="highlight-sub">AI托管，单人轻量化创业</div>
+          </div>
+        </div>
+
+        <div class="highlight-footer anim-on-enter" data-swiper-parallax="-20">从技术·开店·拓客·运营 全链路赋能</div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="arrow">⌄</span>
+          <span>滑动继续</span>
+        </div>
+      </div>
+
+      <!-- ======== P4 · 五类人群 ======== -->
+      <div class="swiper-slide">
+        <div class="slide-bg slide-bg--audience"></div>
+        <div class="slide-top-bar">
+          <span></span>
+          <span class="slide-counter">4 / 6</span>
+        </div>
+
+        <div class="section-title anim-on-enter" data-swiper-parallax="-80">诚邀五类参会人群</div>
+        <div class="section-divider anim-on-enter" data-swiper-parallax="-60"></div>
+
+        <div class="audience-list" data-swiper-parallax="-40">
+          <div class="audience-item anim-on-enter">
+            <div class="audience-avatar">🧘</div>
+            <div>
+              <div class="audience-name">疗愈师</div>
+              <div class="audience-desc">颂钵·芳香·冥想等手艺人，大会提供变现展示舞台</div>
+            </div>
+          </div>
+          <div class="audience-item anim-on-enter">
+            <div class="audience-avatar">🏨</div>
+            <div>
+              <div class="audience-name">酒店 / 山庄庄主</div>
+              <div class="audience-desc">闲置场地嫁接睡眠项目，拉高客房与场地溢价</div>
+            </div>
+          </div>
+          <div class="audience-item anim-on-enter">
+            <div class="audience-avatar">🏪</div>
+            <div>
+              <div class="audience-name">门店创业者</div>
+              <div class="audience-desc">转型升级，睡眠疗愈是差异化破局优选赛道</div>
+            </div>
+          </div>
+          <div class="audience-item anim-on-enter">
+            <div class="audience-avatar">😴</div>
+            <div>
+              <div class="audience-name">失眠困扰人群</div>
+              <div class="audience-desc">亲临现场体验专业疗愈，改善自身睡眠</div>
+            </div>
+          </div>
+          <div class="audience-item anim-on-enter">
+            <div class="audience-avatar">🔗</div>
+            <div>
+              <div class="audience-name">供应链商家</div>
+              <div class="audience-desc">睡眠产品·仪器·耗材，精准对接全国渠道</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="arrow">⌄</span>
+          <span>滑动继续</span>
+        </div>
+      </div>
+
+      <!-- ======== P5 · 运营团队（18人） ======== -->
+      <div class="swiper-slide">
+        <div class="slide-bg slide-bg--team"></div>
+        <div class="slide-top-bar">
+          <span></span>
+          <span class="slide-counter">5 / 6</span>
+        </div>
+
+        <div class="section-title anim-on-enter">专属运营团队</div>
+        <div class="section-divider anim-on-enter"></div>
+        <div class="highlight-subtitle anim-on-enter">全程兜底帮扶 · 全周期一对一跟进</div>
+
+        <!-- 3D 地球团队成员 -->
+        <div class="sphere-wrap anim-on-enter" id="sphereWrap">
+          <div class="sphere" id="sphere"></div>
+          <div class="sphere-hint">👆 滑动旋转</div>
+        </div>
+
+        <div class="team-commitment anim-on-enter">
+          <div class="team-commitment-title">全周期一对一跟进</div>
+          <div class="team-commitment-desc">
+            从项目落地 · 技术辅导 · 客源拓客 · 门店运营<br>
+            全链路陪伴，解决开店全流程难题
+          </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+          <span class="arrow">⌄</span>
+          <span>立即报名</span>
+        </div>
+      </div>
+
+      <!-- ======== P6 · 报名缴费 ======== -->
+      <div class="swiper-slide">
+        <div class="slide-bg slide-bg--signup"></div>
+        <div class="slide-top-bar">
+          <span></span>
+          <span class="slide-counter">6 / 6</span>
+        </div>
+
+        <!-- 报名参会 -->
+        <div class="signup-section" id="paySection">
+          <!-- 价格卡片 -->
+          <div class="price-card anim-on-enter">
+            <div class="price-badge">限时特惠</div>
+            <div class="price-amount">
+              <span class="price-symbol">¥</span>
+              <span class="price-number">99</span>
+            </div>
+            <div class="price-original">原价 ¥1980</div>
+            <div class="price-gift">🎁 赠价值 1980 元睡眠大礼包</div>
+          </div>
+
+          <!-- 报名即享 -->
+          <div class="includes anim-on-enter">
+            <div class="includes-title">报名即享</div>
+            <div class="includes-grid">
+              <div class="include-item">
+                <div class="include-dot"></div>
+                <span>大会全场通票</span>
+              </div>
+              <div class="include-item">
+                <div class="include-dot"></div>
+                <span>1 对 1 资源对接</span>
+              </div>
+              <div class="include-item">
+                <div class="include-dot"></div>
+                <span>现场项目路演</span>
+              </div>
+              <div class="include-item">
+                <div class="include-dot"></div>
+                <span>午餐茶歇</span>
+              </div>
+              <div class="include-item">
+                <div class="include-dot"></div>
+                <span>1980元礼包</span>
+              </div>
+              <div class="include-item">
+                <div class="include-dot"></div>
+                <span>社群长期陪跑</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 报名按钮 -->
+          <button class="reg-btn anim-on-enter" id="regBtn">
+            <span class="reg-btn-text">立即报名</span>
+            <span class="reg-btn-sub">仅需 99 元，限时抢占席位</span>
+          </button>
+
+          <!-- 地图导航 -->
+          <div class="map-btn anim-on-enter" id="mapBtn" role="button" aria-label="打开高德地图导航至齐河阿尔卡迪亚温泉高尔夫国际酒店" tabindex="0">
+            📍 齐河阿尔卡迪亚温泉高尔夫国际酒店 · 导航
+          </div>
+        </div>
+
+        <!-- 支付后 -->
+        <div class="signup-section" id="formSection" style="display:none;">
+          <div class="section-title anim-on-enter">支付成功</div>
+          <div class="section-divider anim-on-enter"></div>
+
+          <div class="paid-icon anim-on-enter">✅</div>
+          <div class="paid-title anim-on-enter">支付确认完成</div>
+          <div class="paid-desc anim-on-enter">请前往填写报名信息，锁定您的参会名额</div>
+
+          <a class="signup-btn-link anim-on-enter" id="formLink" href="https://f.wps.cn/g/AELnsaFD/" target="_blank">
+            📝 前往填写报名信息
+          </a>
+
+          <p class="form-tip anim-on-enter" style="margin-top:8px;">提交后专属客服将在24小时内联系您</p>
+
+          <div class="map-btn anim-on-enter" id="mapBtn2" role="button" aria-label="打开高德地图导航至齐河阿尔卡迪亚温泉高尔夫国际酒店" tabindex="0">
+            📍 齐河阿尔卡迪亚温泉高尔夫国际酒店 · 导航
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /swiper-wrapper -->
+  </div><!-- /swiper -->
+
+  <!-- ========== 支付引导弹窗 ========== -->
+  <div class="pay-guide" id="payGuide">
+    <div class="pay-guide-card">
+      <div class="pay-close-icon" id="payGuideClose">✕</div>
+      <div class="pay-guide-title">支付报名费 99 元</div>
+      <div class="pay-guide-qr">
+        <img src="assets/payment-qr.png" alt="支付二维码">
+      </div>
+      <div class="pay-guide-tip">请使用微信/支付宝扫一扫支付</div>
+      <button class="pay-guide-btn" id="payGuideBtn">✅ 已支付，填写报名信息</button>
+    </div>
+  </div>
+
+  <!-- WPS 表单链接（支付后打开） -->
+  <a class="wps-link" id="wpsLink" href="https://f.wps.cn/g/AELnsaFD/" target="_blank" style="display:none;"></a>
+
+  <!-- 分享海报已移除 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

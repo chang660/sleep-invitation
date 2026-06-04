@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#192823"/>
+      <stop offset="100%" style="stop-color:#2a4538"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="32" fill="url(#bg)"/>
+  <!-- 月亮 -->
+  <circle cx="96" cy="72" r="28" fill="#ffd54f" opacity="0.9"/>
+  <circle cx="108" cy="66" r="24" fill="#192823"/>
+  <!-- 星星 -->
+  <circle cx="60" cy="48" r="2" fill="#fff" opacity="0.6"/>
+  <circle cx="130" cy="50" r="1.5" fill="#fff" opacity="0.4"/>
+  <circle cx="50" cy="80" r="1" fill="#fff" opacity="0.5"/>
+  <circle cx="140" cy="82" r="1.8" fill="#fff" opacity="0.3"/>
+  <!-- Z -->
+  <text x="96" y="138" text-anchor="middle" font-family="serif" font-size="36" font-weight="bold" fill="#ffd54f" opacity="0.7">Z</text>
+  <text x="116" y="154" text-anchor="middle" font-family="serif" font-size="24" font-weight="bold" fill="#ffd54f" opacity="0.4">z</text>
+  <text x="132" y="166" text-anchor="middle" font-family="serif" font-size="16" font-weight="bold" fill="#ffd54f" opacity="0.2">z</text>
+</svg>

@@ -171,15 +171,14 @@
     const btn = document.getElementById('musicBtn');
     if (!btn) return;
     const audio = new Audio(CONFIG.musicFile);
-    audio.preload = 'none';
+    audio.preload = 'auto';
     audio.loop = true;
     audio.volume = 0.3;
+    audio.load();
     let isPlaying = false;
     let userInteracted = false;
 
-    function tryAutoPlay() {
-      if (userInteracted) return;
-      userInteracted = true;
+    function doPlay() {
       audio.play().then(() => {
         isPlaying = true;
         btn.classList.remove('muted');
@@ -188,11 +187,17 @@
         btn.classList.add('muted');
         btn.textContent = '🎵';
       });
+    }
+
+    function tryAutoPlay() {
+      if (userInteracted) return;
+      userInteracted = true;
+      doPlay();
       document.removeEventListener('touchstart', tryAutoPlay);
       document.removeEventListener('click', tryAutoPlay);
     }
-    document.addEventListener('touchstart', tryAutoPlay);
-    document.addEventListener('click', tryAutoPlay);
+    document.addEventListener('touchstart', tryAutoPlay, { once: true });
+    document.addEventListener('click', tryAutoPlay, { once: true });
 
     btn.addEventListener('click', function (e) {
       e.stopPropagation();

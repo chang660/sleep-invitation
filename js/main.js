@@ -174,27 +174,46 @@
     audio.preload = 'auto';
     audio.loop = true;
     audio.volume = 0.3;
-    audio.load();
+    let audioLoaded = false;
+    let playPending = false;
     let isPlaying = false;
     let userInteracted = false;
 
+    // 预加载
+    audio.addEventListener('canplaythrough', () => {
+      audioLoaded = true;
+      if (playPending) {
+        playPending = false;
+        audio.play().then(() => {
+          isPlaying = true;
+          btn.classList.remove('muted');
+          btn.textContent = '🎵';
+        }).catch(() => {});
+      }
+    });
+    audio.load();
+
     function doPlay() {
-      audio.play().then(() => {
-        isPlaying = true;
-        btn.classList.remove('muted');
-        btn.textContent = '🎵';
-      }).catch(() => {
-        btn.classList.add('muted');
-        btn.textContent = '🎵';
-      });
+      if (audioLoaded) {
+        audio.play().then(() => {
+          isPlaying = true;
+          btn.classList.remove('muted');
+          btn.textContent = '🎵';
+        }).catch(() => {
+          btn.classList.add('muted');
+          btn.textContent = '🎵';
+        });
+      } else {
+        // 还没加载完，标记等加载后播放
+        playPending = true;
+        btn.textContent = '⏳';
+      }
     }
 
     function tryAutoPlay() {
       if (userInteracted) return;
       userInteracted = true;
       doPlay();
-      document.removeEventListener('touchstart', tryAutoPlay);
-      document.removeEventListener('click', tryAutoPlay);
     }
     document.addEventListener('touchstart', tryAutoPlay, { once: true });
     document.addEventListener('click', tryAutoPlay, { once: true });

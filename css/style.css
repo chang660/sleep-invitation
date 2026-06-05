@@ -52,18 +52,6 @@ html, body {
 .loading-bar { width:220px; height:3px; background:rgba(255,255,255,0.1); border-radius:2px; margin:0 auto; overflow:hidden; }
 .loading-bar-inner { height:100%; width:0%; background:linear-gradient(90deg,#ffd54f,#ff8f00); border-radius:2px; transition:width 0.3s ease; }
 
-/* === 页码指示器 === */
-.page-indicator {
-  position:fixed; right:14px; top:50%; transform:translateY(-50%);
-  display:flex; flex-direction:column; gap:10px; z-index:100;
-}
-.page-dot {
-  width:8px; height:8px; border-radius:50%;
-  background:rgba(255,255,255,0.2);
-  transition:all 0.4s ease;
-}
-.page-dot.active { width:10px; height:24px; border-radius:5px; background:#ffd54f; }
-
 /* === 顶部栏 === */
 .slide-top-bar {
   position:absolute; top:0; left:0; right:0;

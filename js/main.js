@@ -235,16 +235,7 @@
     });
   }
 
-  // ========== 4. 页码指示器 ==========
-  function initIndicator() {
-    const dots = $$('.page-dot');
-    if (!dots.length) return;
-    window._updateIndicator = function (index) {
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-    };
-  }
-
-  // ========== 5. Swiper 初始化（Cube 3D + Parallax） ==========
+  // ========== 4. Swiper 初始化（Cube 3D + Parallax） ==========
   function initSwiper() {
     if (typeof Swiper === 'undefined') {
       // 如果 Swiper 还没加载，等一会再试
@@ -264,12 +255,10 @@
       on: {
         init: function () {
           animateSlide(0);
-          if (window._updateIndicator) window._updateIndicator(0);
           updateScrollHint(0);
         },
         slideChangeTransitionStart: function () {
           animateSlide(this.activeIndex);
-          if (window._updateIndicator) window._updateIndicator(this.activeIndex);
           updateScrollHint(this.activeIndex);
         },
       },
@@ -539,7 +528,6 @@
   function init() {
     initStarCanvas();
     initMusic();
-    initIndicator();
     initSwiper();
     initTeamSphere();
 

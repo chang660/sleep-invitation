@@ -317,6 +317,7 @@
       { name:'煊大', role:'技术研发', color:'rgba(180,140,220,0.12)', initial:'煊', avatar:'assets/team/xuanda.jpg' },
       { name:'郭敬', role:'项目助理', color:'rgba(255,160,100,0.12)', initial:'郭', avatar:'assets/team/guojing.jpg' },
       { name:'畅景恒', role:'AI技术总监', color:'rgba(200,100,200,0.12)', initial:'畅', avatar:'assets/team/changjingheng.jpg' },
+      { name:'成成', role:'运营助理', color:'rgba(255,180,200,0.12)', initial:'成', avatar:'assets/team/chengcheng.jpg' },
     ];
 
     const radius = 135;

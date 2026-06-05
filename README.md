@@ -75,6 +75,6 @@ npx http-server H5邀请函 -p 8080
 - **背景音乐**：将 mp3 放入 `assets/background.mp3`
 - **地图终点**：修改 `js/main.js` 中 `CONFIG.mapUrl`
 - **团队名单**：编辑 `index.html` P5 部分
-- **收款二维码**：替换 `assets/payment-qr.svg` 为你的微信/支付宝 99 元收款码
+- **收款二维码**：替换 `assets/payment-qr.png` 为你的微信/支付宝 99 元收款码
 - **WPS 表单链接**：编辑 `index.html` 中 `wpsLink` 的 `href`
 - **颜色主题**：主色 `#192823`，修改 `css/style.css` 中的颜色值

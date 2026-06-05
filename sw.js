@@ -11,6 +11,8 @@ const PRECACHE_URLS = [
   './css/style.css',
   './js/main.js',
   './manifest.json',
+  './assets/cover.png',
+  './assets/payment-qr.png',
 ];
 
 // 安装：预缓存核心文件

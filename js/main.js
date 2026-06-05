@@ -277,9 +277,14 @@
   }
 
   // ========== 6. 页面进入动画 + 滚动引导 ==========
+  const animatedSlides = new Set();
+
   function animateSlide(index) {
     const slides = $$('.swiper-slide');
     if (!slides[index]) return;
+    // 防止滑动回看时重复触发动画
+    if (animatedSlides.has(index)) return;
+    animatedSlides.add(index);
     const els = slides[index].querySelectorAll('.anim-on-enter');
     els.forEach((el, i) => {
       el.style.opacity = '0';
@@ -462,7 +467,7 @@
     const payGuideBtn = document.getElementById('payGuideBtn');
     const paySection = document.getElementById('paySection');
     const formSection = document.getElementById('formSection');
-    if (!regBtn || !payGuide) return;
+    if (!regBtn || !payGuide || !paySection || !formSection) return;
 
     regBtn.addEventListener('click', () => payGuide.classList.add('show'));
 
@@ -480,6 +485,24 @@
         paySection.style.display = 'none';
         formSection.style.display = 'flex';
         formSection.querySelectorAll('.anim-on-enter').forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, i * 100);
+        });
+      });
+    }
+
+    // 重新支付按钮
+    const payAgainBtn = document.getElementById('payAgainBtn');
+    if (payAgainBtn) {
+      payAgainBtn.addEventListener('click', () => {
+        paySection.style.display = 'flex';
+        formSection.style.display = 'none';
+        paySection.querySelectorAll('.anim-on-enter').forEach((el, i) => {
           el.style.opacity = '0';
           el.style.transform = 'translateY(20px)';
           setTimeout(() => {

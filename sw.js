@@ -3,7 +3,7 @@
    基本离线缓存
    ============================================ */
 
-const CACHE_NAME = 'sleep-healing-v1';
+const CACHE_NAME = 'sleep-healing-v2';
 
 const PRECACHE_URLS = [
   './',

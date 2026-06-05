@@ -174,49 +174,34 @@
     audio.preload = 'auto';
     audio.loop = true;
     audio.volume = 0.3;
-    let audioLoaded = false;
-    let playPending = false;
     let isPlaying = false;
-    let userInteracted = false;
 
-    // 预加载
-    audio.addEventListener('canplaythrough', () => {
-      audioLoaded = true;
-      if (playPending) {
-        playPending = false;
-        audio.play().then(() => {
-          isPlaying = true;
-          btn.classList.remove('muted');
-          btn.textContent = '🎵';
-        }).catch(() => {});
-      }
-    });
-    audio.load();
-
-    function doPlay() {
-      if (audioLoaded) {
-        audio.play().then(() => {
-          isPlaying = true;
-          btn.classList.remove('muted');
-          btn.textContent = '🎵';
-        }).catch(() => {
-          btn.classList.add('muted');
-          btn.textContent = '🎵';
-        });
-      } else {
-        // 还没加载完，标记等加载后播放
-        playPending = true;
-        btn.textContent = '⏳';
-      }
+    function startPlay() {
+      if (isPlaying) return;
+      audio.play().then(() => {
+        isPlaying = true;
+        btn.classList.remove('muted');
+        btn.textContent = '🎵';
+      }).catch(() => {});
     }
 
-    function tryAutoPlay() {
-      if (userInteracted) return;
-      userInteracted = true;
-      doPlay();
+    // 用户任意交互 → 尝试播放
+    function onUserTouch() {
+      document.removeEventListener('touchstart', onUserTouch);
+      document.removeEventListener('click', onUserTouch);
+      document.removeEventListener('touchend', onUserTouch);
+      startPlay();
     }
-    document.addEventListener('touchstart', tryAutoPlay, { once: true });
-    document.addEventListener('click', tryAutoPlay, { once: true });
+    document.addEventListener('touchstart', onUserTouch);
+    document.addEventListener('click', onUserTouch);
+    document.addEventListener('touchend', onUserTouch);
+
+    // 微信 JSBridge 就绪 → 自动播放
+    if (typeof WeixinJSBridge !== 'undefined') {
+      WeixinJSBridge.invoke('getNetworkType', {}, () => startPlay());
+    } else {
+      document.addEventListener('WeixinJSBridgeReady', startPlay, { once: true });
+    }
 
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
@@ -226,11 +211,7 @@
         btn.classList.add('muted');
         btn.textContent = '🎵';
       } else {
-        audio.play().then(() => {
-          isPlaying = true;
-          btn.classList.remove('muted');
-          btn.textContent = '🎵';
-        }).catch(() => { showToast('请先点击页面'); });
+        startPlay();
       }
     });
   }
